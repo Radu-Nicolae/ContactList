@@ -3,7 +3,6 @@ package com.radu.utilities.options;
 import com.radu.App;
 import com.radu.contacts.Contact;
 import com.radu.contacts.Database;
-import com.radu.utilities.AppUtilities;
 import com.radu.utilities.Print;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public class Option4 {
     static Scanner scn = new Scanner(System.in);
     static App app = new App();
 
-    public static List<Contact> runOption4(List<Contact> contacts){
+    public static List<Contact> runOption4(List<Contact> contacts) {
         System.out.println("\nAdd a contact");
         String fullName;
         String phoneNumber;
@@ -33,8 +32,12 @@ public class Option4 {
         System.out.print("Enter contact's address: ");
         address = scn.nextLine();
 
+        //capitalize the name
         fullName = fullName.substring(0, 1).toUpperCase() + fullName.substring(1);
-        Contact contact = new Contact((contacts.size() + 1),fullName, phoneNumber, mail, address);
+
+
+        Contact contact = new Contact((contacts.size() + 1), fullName, phoneNumber, mail, address);
+
         System.out.println("\nYou are about to enter the following contact: ");
         Print.printContact(contact);
 
@@ -44,24 +47,21 @@ public class Option4 {
 
         do {
             answer = scn.nextLine();
-            if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")){
+            if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")) {
                 isInputNotValid = false;
-            }
-            else{
+            } else {
                 System.out.print("Input not valid, please choose from yes or no: ");
             }
         }
         while (isInputNotValid);
 
-        if (answer.equalsIgnoreCase("yes")){
+        if (answer.equalsIgnoreCase("yes")) {
             System.out.println("\nContact successfully added!\n\n");
-        }
-        else {
+        } else {
             editContact(contact, contacts);
             System.out.println("\nContact successfully added!\n\n");
 
         }
-
 
         contacts.add(contact);
 
@@ -70,7 +70,7 @@ public class Option4 {
     }
 
 
-    public static Contact editContact(Contact contact, List<Contact> contacts){
+    public static Contact editContact(Contact contact, List<Contact> contacts) {
         System.out.println("\nSelect you option: ");
         System.out.println("1. Edit the details added");
         System.out.println("2. Return to main menu");
@@ -81,19 +81,17 @@ public class Option4 {
 
         do {
             answer = scn.nextLine();
-            if (answer.equalsIgnoreCase("1") || answer.equalsIgnoreCase("2")){
+            if (answer.equalsIgnoreCase("1") || answer.equalsIgnoreCase("2")) {
                 isInputNotValid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please select between 1 and 2: ");
             }
         }
         while (isInputNotValid);
 
-        if (answer.equalsIgnoreCase("1")){
+        if (answer.equalsIgnoreCase("1")) {
             Option3.editContact(contact);
-        }
-        else{
+        } else {
             app.runApp(contacts);
         }
 
@@ -106,16 +104,15 @@ public class Option4 {
 
         do {
             answer = scn.nextLine();
-            if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")){
+            if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")) {
                 isInputNotValid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please enter a valid input (yes/no): ");
             }
         }
         while (isInputNotValid);
 
-        if (answer.equalsIgnoreCase("no")){
+        if (answer.equalsIgnoreCase("no")) {
             editContact(contact, contacts);
         }
 

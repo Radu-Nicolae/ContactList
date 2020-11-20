@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Option2 {
 
-    public static void runOption2(List<Contact> contacts){
+    public static void runOption2(List<Contact> contacts) {
         App app = new App();
         AppUtilities.printContact(contacts);
 

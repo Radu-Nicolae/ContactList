@@ -3,3 +3,5 @@
 target
 *.xml
 out
+mvnw
+mvnw.cmd

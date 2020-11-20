@@ -3,14 +3,13 @@ package com.radu.contacts;
 import com.github.javafaker.Faker;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Database {
 
     static Faker faker = new Faker();
 
-    public static List<Contact> getContacts(){
+    public static List<Contact> getContacts() {
         List<Contact> contacts = new ArrayList<>();
 
         Contact contact;
@@ -32,7 +31,7 @@ public class Database {
         return contacts;
     }
 
-    public static String generateMail(String fullName){
+    public static String generateMail(String fullName) {
         String mail = fullName.replace(" ", "");
         mail = mail.replace(".", "");
         mail = mail.toLowerCase();
@@ -41,7 +40,7 @@ public class Database {
     }
 
 
-    public static List<Contact> sortContacts(List<Contact> contacts){
+    public static List<Contact> sortContacts(List<Contact> contacts) {
         Contact auxContact;
         String letterFirst;
         String secondLetter;
@@ -52,7 +51,7 @@ public class Database {
                 letterFirst = contacts.get(j).getFullName();
                 secondLetter = contacts.get(j + 1).getFullName();
 
-                if (letterFirst.compareTo(secondLetter) > 0){
+                if (letterFirst.compareTo(secondLetter) > 0) {
                     auxContact = contacts.get(j);
                     contacts.set(j, contacts.get(j + 1));
                     contacts.set(j + 1, auxContact);

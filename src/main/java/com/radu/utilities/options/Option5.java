@@ -13,7 +13,7 @@ public class Option5 {
     static Scanner scn = new Scanner(System.in);
     static Contact contact;
 
-    public static List<Contact> runOption5(List<Contact> contacts){
+    public static List<Contact> runOption5(List<Contact> contacts) {
         Print.printDatabase(contacts);
 
         System.out.print("\nEnter the index of the contact you want to remove: ");
@@ -24,11 +24,10 @@ public class Option5 {
 
         do {
             index = scn.nextLine();
-            if ((Integer.parseInt(index) > 0 && Integer.parseInt(index) <= contacts.size())){
+            if ((Integer.parseInt(index) > 0 && Integer.parseInt(index) <= contacts.size())) {
                 contact = contacts.get(Integer.parseInt(index) - 1);
                 isInputInvalid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please enter a valid input: ");
             }
         }
@@ -44,25 +43,23 @@ public class Option5 {
 
         do {
             input = scn.nextLine();
-            if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")){
+            if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")) {
                 isInputInvalid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please enter a valid input (yes/no): ");
             }
         }
         while (isInputInvalid);
 
 
-        if (input.equalsIgnoreCase("yes")){
+        if (input.equalsIgnoreCase("yes")) {
             System.out.println("\nContact successfully removed!\n\n");
             contacts.remove(contact);
-        }
-        else {
+        } else {
             System.out.println("\nThe contact wasn't removed!\n\n");
         }
 
-        app.runApp(contacts);;
+        app.runApp(contacts);
 
         return contacts;
     }

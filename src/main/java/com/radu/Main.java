@@ -11,8 +11,8 @@ public class Main {
     //3. phone number
     //4. email address
     //5. address
-    //Contacts's name will be added using a Faker, as well as their address.
-    //Phone will be generated randomly and their emails will be fullnames@gmail.com
+    //Contacts' name will be added using a Faker, as well as their phone numbers and their addresses.
+    //Their emails will be returned by a method which concatenates contacts' names: fullnames@gmail.com
 
     //1. TODO: The user will see only full name and phone number
     //2. TODO: The user will have the possibility to see more details about the contact

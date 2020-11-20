@@ -1,12 +1,9 @@
 package com.radu;
 
 import com.radu.contacts.Contact;
-import com.radu.contacts.Database;
-import com.radu.utilities.AppUtilities;
 import com.radu.utilities.Print;
 import com.radu.utilities.options.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,21 +34,20 @@ public class App {
 
         switch (input) {
             case "1":
-                Option1.runOption1(contacts);
+                Option1.runOption1(contacts); //view all contacts
                 break;
             case "2":
-                Option2.runOption2(contacts);
+                Option2.runOption2(contacts); //view contact's details
                 break;
             case "3":
-                contacts = Option3.runOption3(contacts);
+                Option3.runOption3(contacts); //edit a contact's detail
                 break;
             case "4":
-                contacts = Option4.runOption4(contacts);
+                Option4.runOption4(contacts); //add a contact
                 break;
             case "5":
-                contacts = Option5.runOption5(contacts);
+                Option5.runOption5(contacts); //remove a contact
                 break;
-
 
         }
     }

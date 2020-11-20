@@ -13,7 +13,7 @@ public class Option3 {
     static Scanner scn = new Scanner(System.in);
     static App app = new App();
 
-    public static List<Contact> runOption3(List<Contact> contacts){
+    public static List<Contact> runOption3(List<Contact> contacts) {
         Contact contact = AppUtilities.printContact(contacts);
         editContact(contact);
 
@@ -22,7 +22,7 @@ public class Option3 {
         return contacts;
     }
 
-    public static Contact editContact(Contact contact){
+    public static Contact editContact(Contact contact) {
         Print.printWhatToEdit();
 
         String input;
@@ -32,16 +32,15 @@ public class Option3 {
         do {
             input = scn.next();
             if (input.equalsIgnoreCase("1") || input.equalsIgnoreCase("2") ||
-                    input.equalsIgnoreCase("3") || input.equalsIgnoreCase("4")){
+                    input.equalsIgnoreCase("3") || input.equalsIgnoreCase("4")) {
                 isInputInvalid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please enter a valid input: ");
             }
         }
         while (isInputInvalid);
 
-        switch (input){
+        switch (input) {
             case "1":
                 AppUtilities.editName(contact);
                 break;
@@ -61,23 +60,21 @@ public class Option3 {
         isInputInvalid = true;
 
         Scanner sc = new Scanner(System.in); //declaring a new scanner, because, at runtime, the program
-                                             //skips "input = scn.nextLine()". bugs...
+        //skips "input = scn.nextLine()". bugs...
         do {
             input = sc.nextLine();
-            if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")){
+            if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")) {
                 isInputInvalid = false;
-            }
-            else {
+            } else {
                 System.out.print("Please choose between yes and no: ");
             }
         }
         while (isInputInvalid);
 
-        if (input.equalsIgnoreCase("yes")){
+        if (input.equalsIgnoreCase("yes")) {
             System.out.println("");
             editContact(contact);
-        }
-        else {
+        } else {
             System.out.println("\n");
         }
 

@@ -1,8 +1,6 @@
 package com.radu.utilities;
 
-import com.radu.App;
 import com.radu.contacts.Contact;
-import com.radu.contacts.Database;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +8,6 @@ import java.util.Scanner;
 public class AppUtilities {
 
     static Scanner scn = new Scanner(System.in);
-    static App app = new App();
     static Contact contact;
 
     public static Contact printContact(List<Contact> contacts) {
@@ -19,7 +16,7 @@ public class AppUtilities {
         String indexString = scn.next();
 
         int indexInt = 0;
-        boolean haveCaught = false;
+        boolean haveCaught;
         do {
             try {
                 indexInt = Integer.parseInt(indexString);
@@ -49,8 +46,8 @@ public class AppUtilities {
 
     public static Contact editName(Contact contact) {
         Scanner sc = new Scanner(System.in); //I'm declaring a new object Scanner because of some bugs
-                                             //of Java. When I was trying to use scn at runtime the
-                                             //the program was skipping "name = scn.nextLine();"
+        //of Java. When I was trying to use scn at runtime the
+        //the program was skipping "name = scn.nextLine();"
         System.out.print("Enter the new name: ");
         String name;
         name = sc.nextLine();
@@ -66,8 +63,8 @@ public class AppUtilities {
         System.out.print("Enter the new phone number: ");
 
         Scanner sc = new Scanner(System.in); //The same bug as before, when I was trying to use the static scn
-                                             //the program was skipping "phoneNumber = scn.nextLine()", at
-                                             //runtime.
+        //the program was skipping "phoneNumber = scn.nextLine()", at
+        //runtime.
         phoneNumber = sc.nextLine();
 
         contact.setPhoneNumber(phoneNumber);

@@ -52,7 +52,6 @@ public class Print {
         System.out.println("");
 
 
-
         for (int i = 0; i < contacts.size(); i++) {
             contact = contacts.get(i);
             int howMuchSmaller = getLongestName(contacts) - contact.getFullName().length();
@@ -60,11 +59,10 @@ public class Print {
 
             if (i < 9) {
                 System.out.print(" " + (i + 1) + ". " + contact.getFullName());
-                printContactDetails(contact, howMuchSmaller);
             } else {
                 System.out.print((i + 1) + ". " + contact.getFullName());
-                printContactDetails(contact, howMuchSmaller);
             }
+            printContactDetails(contact, howMuchSmaller);
         }
     }
 
@@ -89,7 +87,7 @@ public class Print {
     }
 
 
-    public static int getLongestPhoneNumber(List<Contact> contacts){
+    public static int getLongestPhoneNumber(List<Contact> contacts) {
         int max = 0;
 
         for (Contact contact : contacts) {
