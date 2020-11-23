@@ -59,14 +59,14 @@ public class Option3 {
         System.out.print("Your answer (yes/no): ");
         isInputInvalid = true;
 
-        Scanner sc = new Scanner(System.in); //declaring a new scanner, because, at runtime, the program
-        //skips "input = scn.nextLine()". bugs...
+        Scanner sc = new Scanner(System.in); //declaring a new scanner, because, at runtime,
+                                             // the program skips "input = scn.nextLine()". bugs...
         do {
             input = sc.nextLine();
             if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")) {
                 isInputInvalid = false;
             } else {
-                System.out.print("Please choose between yes and no: ");
+                System.out.print("Please choose yes or no: ");
             }
         }
         while (isInputInvalid);

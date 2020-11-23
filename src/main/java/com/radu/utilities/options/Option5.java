@@ -18,35 +18,46 @@ public class Option5 {
 
         System.out.print("\nEnter the index of the contact you want to remove: ");
 
-        String input;
-        boolean isInputInvalid = true;
-        String index;
+        String indexString;
 
+        int indexInt = 0;
+        boolean haveCaught;
         do {
-            index = scn.nextLine();
-            if ((Integer.parseInt(index) > 0 && Integer.parseInt(index) <= contacts.size())) {
-                contact = contacts.get(Integer.parseInt(index) - 1);
-                isInputInvalid = false;
-            } else {
-                System.out.print("Please enter a valid input: ");
+            indexString = scn.next();
+            try {
+                indexInt = Integer.parseInt(indexString);
+                haveCaught = true;
+
+                if (indexInt < 1 || indexInt > contacts.size()) {
+                    haveCaught = false;
+                    System.out.print("Please enter a valid number: ");
+                }
+            } catch (Exception ex) {
+                System.out.print("Please enter a valid number: ");
+                haveCaught = false;
             }
         }
-        while (isInputInvalid);
+        while (!haveCaught);
+
+        contact = contacts.get(indexInt);
 
         System.out.println("\nYou are about to remove the following contact: ");
         Print.printContact(contact);
 
         System.out.print("\nConfirm? You answer (yes/no): ");
 
-        isInputInvalid = true;
+        boolean isInputInvalid = true;
+        String input;
 
+        Scanner sc = new Scanner(System.in); //declaring a new scanner because the static one
+                    //skips some lines of code because of its bugs
 
         do {
-            input = scn.nextLine();
+            input = sc.nextLine();
             if (input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("no")) {
                 isInputInvalid = false;
             } else {
-                System.out.print("Please enter a valid input (yes/no): ");
+                System.out.print("Please choose yes or no: ");
             }
         }
         while (isInputInvalid);

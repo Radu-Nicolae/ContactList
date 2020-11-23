@@ -7,9 +7,16 @@ import java.util.List;
 public class Print {
 
     public static void printWelcome() {
-        System.out.println("================================");
-        System.out.println("|   Welcome to contact list!   |");
-        System.out.println("================================\n");
+        System.out.println(" ██████  ██████  ███    ██ ████████  █████   ██████ ████████     ██      ██ ███████ ████████ \n" +
+                "██      ██    ██ ████   ██    ██    ██   ██ ██         ██        ██      ██ ██         ██    \n" +
+                "██      ██    ██ ██ ██  ██    ██    ███████ ██         ██        ██      ██ ███████    ██    \n" +
+                "██      ██    ██ ██  ██ ██    ██    ██   ██ ██         ██        ██      ██      ██    ██    \n" +
+                " ██████  ██████  ██   ████    ██    ██   ██  ██████    ██        ███████ ██ ███████    ██   ");
+                 System.out.println("\n");
+
+//        System.out.println("================================");
+//        System.out.println("|   Welcome to contact list!   |");
+//        System.out.println("================================\n");
     }
 
     public static void printWhatToDo() {

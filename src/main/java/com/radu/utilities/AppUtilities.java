@@ -13,22 +13,25 @@ public class AppUtilities {
     public static Contact printContact(List<Contact> contacts) {
         Print.printDatabase(contacts);
         System.out.print("\nEnter the index of the contact: ");
-        String indexString = scn.next();
+        String indexString;
 
         int indexInt = 0;
         boolean haveCaught;
         do {
+            indexString = scn.next();
             try {
                 indexInt = Integer.parseInt(indexString);
                 haveCaught = true;
+
+                if (indexInt < 1 || indexInt > contacts.size()) {
+                    haveCaught = false;
+                    System.out.print("Please enter a valid number: ");
+                }
             } catch (Exception ex) {
-                System.out.print("Enter a valid number: ");
+                System.out.print("Please enter a valid number: ");
                 haveCaught = false;
             }
 
-            if (indexInt <= 1) {
-                haveCaught = false;
-            }
         }
         while (!haveCaught);
 

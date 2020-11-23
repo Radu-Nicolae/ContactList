@@ -50,7 +50,7 @@ public class Option4 {
             if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")) {
                 isInputNotValid = false;
             } else {
-                System.out.print("Input not valid, please choose from yes or no: ");
+                System.out.print("Please choose yes or no: ");
             }
         }
         while (isInputNotValid);
@@ -84,7 +84,7 @@ public class Option4 {
             if (answer.equalsIgnoreCase("1") || answer.equalsIgnoreCase("2")) {
                 isInputNotValid = false;
             } else {
-                System.out.print("Please select between 1 and 2: ");
+                System.out.print("Please select 1 or 2: ");
             }
         }
         while (isInputNotValid);
@@ -98,7 +98,7 @@ public class Option4 {
         System.out.println("You are about to add the following contact: ");
         Print.printContact(contact);
 
-        System.out.print("Confirm? You answer (yes/no): ");
+        System.out.print("Confirm? Your answer (yes/no): ");
 
         isInputNotValid = true;
 
@@ -107,11 +107,12 @@ public class Option4 {
             if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")) {
                 isInputNotValid = false;
             } else {
-                System.out.print("Please enter a valid input (yes/no): ");
+                System.out.print("Please choose yes or no: ");
             }
         }
         while (isInputNotValid);
 
+        System.out.println("");
         if (answer.equalsIgnoreCase("no")) {
             editContact(contact, contacts);
         }
